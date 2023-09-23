@@ -28,7 +28,7 @@ def del_note(id):
     with open('db.csv', 'r') as f:
         lines = f.readlines()
         f.close()
-    with open('file.txt', 'w') as f:
+    with open('db.csv', 'w') as f:
         for line in lines:
             if not line.startswith(str(id)):
                 f.write(line)
