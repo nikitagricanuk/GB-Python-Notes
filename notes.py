@@ -29,8 +29,8 @@ def add_note(title, body):
         f.write(data)
         f.close()
     
-def del_note(id, title):
-    if title == None and id == None:
+def del_note(id):
+    if id == None:
         print("You must specify at least one argument! Exiting...")
         exit()
     
@@ -74,6 +74,10 @@ def read_note(id):
             print("Could not find database file.")
 
 def edit_note(id):
+    if id == None:
+        print("You must specify at least one argument! Exiting...")
+        exit()
+    
     read_note(id)
     new_title = input("Please enter new title: ")
     new_body = input("Please enter new body: ")
@@ -83,5 +87,9 @@ def edit_note(id):
         f.close()
     with open('db.csv', 'w') as f:
         for line in lines:
-            if not (str(id)):
+            if line.split(';')[0] != id:
                 f.write(line)
+            else:
+                #                id                    created             edited        title       body
+                new_line = f"{line.split(';')[0]};{line.split(';')[1]};{date.today()};{new_title};{new_body}\n"
+                f.write(new_line)
