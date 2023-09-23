@@ -6,4 +6,4 @@ def parse_args(args):
             note_body = args[i+1]
         else:
             print(f"Unknown option: {args[i]}")
-    return note_body, note_title
+    return note_title, note_body
