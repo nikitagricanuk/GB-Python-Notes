@@ -1,0 +1,11 @@
+def help():
+    print("Usage: python3 main.py [OPTION]...\n")
+    print("add:")
+    print("\t--title\t\t Note title")
+    print("\t--msg\t\t Note body")
+    print("del:")
+    print("\t--id\t\t Note identifier")
+    print("read:")
+    print("\tUse without arguments")
+    print("edit:")
+    print("\t--id\t\t Note identifier")
