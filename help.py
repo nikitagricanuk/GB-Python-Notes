@@ -6,6 +6,6 @@ def help():
     print("del:")
     print("\t--id\t\t Note identifier")
     print("read:")
-    print("\tUse without arguments")
+    print("\t--id\t\t Note identifier")
     print("edit:")
     print("\t--id\t\t Note identifier")
